@@ -399,6 +399,7 @@ footer {
 .about-container {
     display: grid;
     grid-template-columns: 2fr 3fr;
+
     gap: 3rem;
     align-items: center;
 }
@@ -505,6 +506,103 @@ form#contact-form button {
     cursor: pointer;
     transition: all 0.3s ease;
 }
+
+/* Theme-toggle button */
+.theme-toggle-btn {
+    background: none;
+    border: none;
+    color: var(--text-color);
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.theme-toggle-btn:hover {
+    color: var(--primary-color);
+}
+
+/* Light theme variables */
+body.light-mode {
+    --background-color: #f4f4f4;
+    --surface-color: #ffffff;
+    --text-color: #1a1a1a;
+    --text-secondary-color: #555;
+    --primary-color: #007bff; /* A nice blue for light mode */
+}
+
+/* Adjustments for light mode */
+body.light-mode header {
+    border-bottom: 1px solid #ddd;
+}
+
+body.light-mode .contact-btn {
+    background-color: var(--primary-color);
+    color: #fff; /* White text on blue background */
+}
+
+body.light-mode .contact-btn:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+body.light-mode .btn.btn-secondary {
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+body.light-mode .btn.btn-secondary:hover {
+    color: #fff;
+}
+
+body.light-mode .hero-image img {
+     border-color: #ddd;
+     /* Re-enable glow with light theme primary color */
+     animation: glow-light 4s infinite ease-in-out;
+}
+
+/* Keyframes for light mode glow */
+@keyframes glow-light {
+    0% {
+        box-shadow: 0 0 10px var(--primary-color), 0 0 20px var(--primary-color);
+    }
+    50% {
+        box-shadow: 0 0 20px var(--primary-color), 0 0 40px var(--primary-color);
+    }
+    100% {
+        box-shadow: 0 0 10px var(--primary-color), 0 0 20px var(--primary-color);
+    }
+}
+
+body.light-mode .service-card:hover {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+body.light-mode .project-card {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+body.light-mode .project-card:hover {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+body.light-mode footer {
+    background-color: #e9e9e9;
+    border-image: linear-gradient(to right, #ddd, var(--primary-color), #ddd) 1;
+}
+
+body.light-mode .footer-bottom {
+    border-top: 1px solid #ddd;
+}
+
+body.light-mode nav a.active {
+    font-weight: 600; /* Make active link bolder */
+}
+
+body.light-mode form#contact-form .form-input {
+    background-color: var(--surface-color); /* white background */
+    border-color: #ccc; /* light grey border */
+}
+
+
 
 form#contact-form button:hover {
     background-color: #ffca2c;

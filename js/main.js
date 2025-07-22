@@ -164,4 +164,36 @@ document.addEventListener("DOMContentLoaded", () => {
             card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale3d(1, 1, 1)';
         });
     });
+
+    // Theme switcher
+    const themeToggle = document.getElementById('theme-toggle');
+    const body = document.body;
+
+    const applySavedTheme = () => {
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'light') {
+            body.classList.add('light-mode');
+            themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+        } else {
+            themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+        }
+    };
+
+    const toggleTheme = () => {
+        body.classList.toggle('light-mode');
+        let theme = 'dark';
+        if (body.classList.contains('light-mode')) {
+            themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+            theme = 'light';
+        } else {
+            themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+        }
+        localStorage.setItem('theme', theme);
+    };
+
+    if (themeToggle) {
+        themeToggle.addEventListener('click', toggleTheme);
+    }
+
+    applySavedTheme();
 });
