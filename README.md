@@ -15,6 +15,7 @@ This is a fully responsive personal portfolio website built with HTML, CSS, and 
 - **Functional Contact Form**: Uses Formspree to forward contact form submissions directly to your email.
 - **Modern UI/UX**: Dark theme with vibrant accent colors and a clean, user-friendly interface.
 - **Font Awesome Icons**: Utilizes a wide range of icons to enhance visual appeal.
+- **Light & Dark Mode**: Includes a theme switcher to toggle between a light and dark theme. The user's preference is saved in their browser for a consistent experience.
 
 ## Technologies Used
 
@@ -52,7 +53,7 @@ To receive messages from the contact form, you need to configure the Formspree e
 ### Customization
 
 - **Text Content**: All text can be edited directly in the `.html` files (`index.html`, `about.html`, etc.).
-- **Styling**: All styles, colors, and fonts can be customized in `css/style.css`. Key color variables are defined at the top of the file in the `:root` section.
+- **Styling**: All styles, colors, and fonts can be customized in `css/style.css`. Key color variables for the default (dark) theme are in the `:root` section, and variables for the light theme are defined under the `body.light-mode` rule.
 - **Images**: Replace the images in the `images` folder with your own. Ensure the profile picture (`girl_picture.jpg`) and project images have the same filenames or update the paths in the HTML.
 
 ## License
